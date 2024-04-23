@@ -874,6 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 1017749833}
   orientation: {fileID: 433195448}
+  USECAM: 0
   moveSpeed: 4500
   maxSpeed: 20
   grounded: 0
@@ -1518,6 +1519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652612471156}
+  - component: {fileID: 919132148137194447}
   m_Layer: 0
   m_Name: Ak_47_Arms
   m_TagString: Untagged
@@ -1525,6 +1527,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148137194447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148137194446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ab983740237348998618972c834bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.1
+  clipSize: 30
+  reservedAmmoCapacity: 270
+  muzzleFlashImage: {fileID: 0}
+  flashes: []
+  normalLocalPosition: {x: 0.54, y: -0.45, z: 0.91}
+  aimingLocalPosition: {x: 0, y: 0, z: 0}
+  aimSmoothing: 10
+  mouseSensitivity: 1
+  weaponSwayAmount: 10
+  randomizeRecoil: 0
+  randomRecoilConstraints: {x: 0, y: 0}
+  recoilPattern: []
 --- !u!1 &984288347101316179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,7 +1734,7 @@ Transform:
   m_GameObject: {fileID: 2766212504555098258}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071069, y: -0.00000014156103, z: 0.000000013096724, w: 0.70710677}
-  m_LocalPosition: {x: -0.047298413, y: 0.029073244, z: -0.407257}
+  m_LocalPosition: {x: -0.047298413, y: 0.022, z: -0.429}
   m_LocalScale: {x: -4.4319835, y: -4.431985, z: -4.431978}
   m_ConstrainProportionsScale: 0
   m_Children: []
