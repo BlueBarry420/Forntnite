@@ -15,6 +15,7 @@ public class GunController : MonoBehaviour
     private int _ammoInReserve;
 
     //Muzzleflash
+    public AudioSource gunsfx;
    
     public Sprite[] flashes;
 
@@ -122,7 +123,7 @@ public class GunController : MonoBehaviour
     private IEnumerator ShootGun()
     {
         DetermineRecoil();
-       
+        gunsfx.Play();
 
         RaycastForEnemy();
 
