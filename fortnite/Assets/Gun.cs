@@ -123,7 +123,7 @@ public class GunController : MonoBehaviour
     private IEnumerator ShootGun()
 
     {
-        EnemyScript enemyScript;
+      
         DetermineRecoil();
         gunsfx.Play();
 
@@ -140,14 +140,13 @@ public class GunController : MonoBehaviour
         {
             try
             {
+                hit.transform.GetComponent<Enemyfollow>().Health -= 10;
                 Debug.Log("Hit an Enemy!");
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.None;
                 rb.AddForce(transform.parent.transform.forward * 500);
                 {
-                    enemyScript = hit.transform.GetComponent<EnemyScript>();
-                    enemyScript.health--;
-                    Debug.Log(enemyScript.health);
+                    
 
                 }
             }

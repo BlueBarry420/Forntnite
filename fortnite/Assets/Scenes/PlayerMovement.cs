@@ -2,6 +2,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
     private float sensMultiplier = 1f;
     
     //Movement
+    public int Health = 100;
     public float moveSpeed = 4500;
     public float maxSpeed = 20;
     public bool grounded;
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool readyToJump = true;
     private float jumpCooldown = 0.25f;
     public float jumpForce = 550f;
+    public Slider HealthBar;
     
     //Input
     float x, y;
@@ -45,6 +48,9 @@ public class PlayerMovement : MonoBehaviour {
     //Sliding
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
+
+    //death screen
+    public RawImage DeathScreen;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -64,6 +70,12 @@ public class PlayerMovement : MonoBehaviour {
     private void Update() {
         MyInput();
         Look();
+        HealthBar.value = Health;
+        if( Health <= 0)
+        {
+            DeathScreen.GetComponent<Animation>().Play();
+            GetComponent<PlayerMovement>().enabled = false;
+        }
     }
 
     /// <summary>
