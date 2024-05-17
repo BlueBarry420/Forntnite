@@ -143,7 +143,7 @@ public class GunController : MonoBehaviour
                 hit.transform.GetComponent<Enemyfollow>().Health -= 10;
                 Debug.Log("Hit an Enemy!");
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
-                rb.constraints = RigidbodyConstraints.None;
+                rb.velocity += (hit.point - hit.transform.position).normalized * .1f; 
                 rb.AddForce(transform.parent.transform.forward * 500);
                 {
                     
